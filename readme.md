@@ -37,11 +37,11 @@
 
 ### Mini-tasks
 
-Please find all the mini-tasks notebooks in the `Materials > Session_X > mini_task` folders.
+Please find all the mini-tasks notebooks in the `Materials > Session_X >` folders.
 
 You can download the entire repository by following these steps:
 
-<h4 id="clonerepo">Clone repository</h4>
+### Clone repository
 
 You can essentially "download" the contents of this repository by cloning the repository. 
 

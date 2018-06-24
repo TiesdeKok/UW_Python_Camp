@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pandas_slides</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       <base target="_blank">
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { 
+      	font-family: 'Droid Serif'; 
+      }
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .remark-code, .remark-inline-code { 
+      	font-family: 'Ubuntu Mono'; 
+      }
+
+            }
+
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+
+      .footnote {
+        position: absolute;
+        right: 3em;
+        bottom: 3em;
+      }
+
+      a, a > code {
+        color: #193a70;
+        text-decoration: none;
+      }
+
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+
+      .remark-code-line-highlighted     { background-color: #373832; }
+
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+
+      .pull-right ~ p {
+        clear: both;
+      }
+
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .mainlayout {
+      	font-size: 20px;
+      }
+
+      .emphasized {
+      	font-weight: bold;
+      }
+
+      /* Slide-specific styling */
+
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+
+       .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+       }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .right-column-next {
+        width: 75%;
+        float: right;
+        display: block;
+        margin-top: -30px;
+      }
+
+      .titleslide {
+      	background-image: url("images/campus_background.jpg");
+      	background-size:cover
+      }
+
+      .titleslide h1, .titleslide h2 {
+        color: black;
+        line-height: 0.8em;
+      }
+
+      .tocslide {
+      	font-size: 22px;
+        line-height: 150%;
+      }
+
+    div.custom_footer {
+		background-color: #d6d7d8;
+	    position: absolute;
+	    bottom: 0px;
+	    left: 0px;
+	    height: 30px;
+	    width: 100%;
+	    text-align: center;
+	}
+	div.custom_footer span {
+	    font-size: 10pt;
+	    color: black;
+	    bottom: -2px;
+	    position: absolute;
+		left: 400px;
+    }
+        
+    span:after { content:""; display: block;}
+        
+    .arrow-right:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #193a70;
+        padding-right: 10px;
+        vertical-align: middle;
+      
+    }
+        
+    .orange-button {
+    background-color: #E46E2E;
+    border-radius: 2px;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    padding: 13px 26px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 4px 0px 4px;
+    }
+
+    .orange-button:hover {
+        background-color: #F27624;
+        color: white;
+        text-decoration: none;
+    }
+
+    .orange-button:active, .orange-button:focus {
+        background-color: #DC601C;
+        color: white;
+        text-decoration: none;
+    }
+        
+    .install-button {
+        margin-top: 20px;
+    }
+        
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 0.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    blockquote p {
+      display: inline;
+    }
+        
+    .frame
+    {
+        width: 1920px;
+        height: 1080px;
+        border: 0;
+
+        -ms-transform: scale(0.80);
+        -moz-transform: scale(0.80);
+        -o-transform: scale(0.80);
+        -webkit-transform: scale(0.80);
+        transform: scale(0.80);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+    .frame1
+    {
+        width: 1200px;
+        height: 750px;
+        border: 0;
+
+        -ms-transform: scale(0.60);
+        -moz-transform: scale(0.60);
+        -o-transform: scale(0.60);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+        
+    </style>
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: center, titleslide
+
+<br><br>
+
+# Python Workshop:
+# Handling data with Pandas
+<br>
+## <a href="http://www.tiesdekok.com" target="_blank">Ties de Kok</a>
+## Tilburg University
+
+---
+
+layout: true
+class: mainlayout
+
+<div class='custom_footer'><span>Python Workshop | Handling data with Pandas | Ties de Kok (&copy; 2018)</span></div> 
+
+---
+
+class: tocslide
+
+.left-column[
+    ## Pandas<br>Library
+]
+.right-column[
+
+<img style="position: relative; top: 30px; left: 0px;" src="images/pandas_intro.PNG", width=100%>
+    
+]
+
+---
+
+class: tocslide
+
+.left-column[
+    ## Pandas<br>Library
+]
+.right-column[
+
+<img style="position: relative; top:0px; left: -160px;" src="images/dataframe.PNG", width=120%>
+    
+]
+
+--
+.right-column-next[
+
+<img style="position: relative; top: 30px; left: -160px;" src="images/to_something_with_dataframe.PNG", width=120%>
+
+]
+
+---
+
+class: tocslide
+
+.left-column[
+  ## Pandas<br>Library  
+  ## Agenda
+]
+.right-column[
+
+### What are we going to do this session
+
+<span style="display: block; padding-top: 1px"></span>
+
+1. Terminology
+
+2. Specific topics:
+  - Open files
+  - Saving files
+  - Navigating dataframe
+  - Select data
+  - Create new columns
+  - Merge data  
+  - Groupby operation
+  - Plotting with Pandas
+  - Plotting with Seaborn 
+    
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Pandas<br>Library  
+  ## Agenda
+  ## Terminology
+]
+.right-column[
+## Terminology
+<span style="display: block; padding-top: 1vh"></span>
+
+### Pandas vs. Numpy
+
+Numpy provides a powerful N-dimensional array object.
+
+<span style="padding-left: 20px" class="arrow-right"></span>Pandas builds upon the Numpy functionality. 
+
+]
+
+--
+.right-column-next[
+
+<span style="display: block; padding-top: 30px"></span>
+
+### pd.DataFrame vs. pd.Series
+
+A Pandas Series is a 1D data structure (like a vector)  
+A Pandas DataFrame is a 2D data structure (like a matrix)
+
+<span style="padding-left: 20px" class="arrow-right"></span>Columns and rows in a DataFrame are Series.  
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+]
+.right-column[
+## Opening data
+Pandas can open pretty much any data file!
+<span style="display: block; padding-top: 10px"></span>
+
+<img style="position: relative; top:0px; left: 0px;" src="images/open_files.PNG", width=90%>
+
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/1_opening_files.ipynb">Opening and Saving files with Pandas notebook</a>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+]
+.right-column[
+## Saving data
+Pandas can save to pretty much any data file! (except SAS)
+<span style="display: block; padding-top: 10px"></span>
+
+<img style="position: relative; top:0px; left: 0px;" src="images/saving_data.PNG", width=82%>
+
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/1_opening_files.ipynb">Opening and Saving files with Pandas notebook</a>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## HDF files
+]
+.right-column[
+## HDF files
+
+<span style="padding-left: 20px" class="arrow-right"></span>Tip: HDF files are awesome!
+
+<img style="position: relative; top:0px; left: 0px;" src="images/hdf.PNG", width=80%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+]
+.right-column[
+## How to inspect your data?
+<span style="display: block; padding-top: 1vh"></span>
+<span style="padding-left: 20px" class="arrow-right"></span>There is no standard data browser for DataFrames
+
+## My recommendation
+
+Use basic operations to view parts of the data in the notebook:
+
+<img style="position: relative; top:0px; left: 30px;" src="images/pandas_head.PNG", width=85%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+]
+.right-column[
+## Alternative, use the QGrid extension
+
+<img style="position: relative; top:0px; left: 00px;" src="images/filtering_demo.gif", width=100%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+  ## Select data
+]
+.right-column[
+## Selecting data
+<span style="display: block; padding-top: 1px"></span>
+
+<img style="position: relative; top:0px; left: 00px;" src="images/selecting_data.PNG", width=100%>
+
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/2_handling_data.ipynb#Select-based-on-condition
+">Selecting data based on a condition, Jupyter Notebook</a>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+  ## Select data
+  ## Create<br>Columns
+]
+.right-column[
+## Creating columns
+<span style="display: block; padding-top: 1px"></span>
+
+<img style="position: relative; top:-30px; left: 00px;" src="images/create_cols.PNG", width=100%>
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/2_handling_data.ipynb#Generate-a-new-column-by-iterating-over-the-dataframe-per-row
+">Various methods to create columns, Jupyter Notebook</a>
+
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+  ## Select data
+  ## Create<br>Columns
+  ## Merge data
+]
+.right-column[
+## Merging DataFrames
+<span style="display: block; padding-top: 1px"></span>
+
+<img style="position: relative; top:-20px; left: 00px;" src="images/pandas_merge.PNG", width=90%>  
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/2_handling_data.ipynb#1)-Merge-datasets
+">Various methods to merge, join, and append, Jupyter Notebook</a>
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Open data
+  ## Save data
+  ## Navigate
+  ## Select data
+  ## Create<br>Columns
+  ## Merge data
+  ## GroupBy<br>Operation
+]
+.right-column[
+## GroupBy Operations
+<span style="display: block; padding-top: 1px"></span>
+
+<img style="position: relative; top:-20px; left: 00px;" src="images/groupby.PNG", width=75%>  
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/2_handling_data.ipynb#Group-by-operations-(to-top)
+">Various methods to merge, join, and append, Jupyter Notebook</a>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Save data
+  ## Navigate
+  ## Select data
+  ## Create<br>Columns
+  ## Merge data
+  ## Groupby<br>Operation
+  ## Plotting
+]
+.right-column[
+## Plotting data (Pandas and Seaborn)
+<span style="display: block; padding-top: 1px"></span>
+
+<img style="position: relative; top:-10px; left: 50px;" src="images/plotting.PNG", width=75%>  
+<span style="padding-left: 20px" class="arrow-right"></span><a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/3_visualizing_data.ipynb
+">Comprehensive notebook for plotting with Pandas</a>
+
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:200px;'><b>Questions?</b></span>
+
+<img style="position: relative; top: 10px; left:80px;" src="images/Business4-150ppp.jpg", width=60%> 
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:250px;'><b>Demonstration</b></span>
+
+<img style="position: relative; top: 10px; left:40px;" src="images/start_coding.jpg", width=90%> 
+
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+  ## Mini-Task<br>Instructions
+]
+
+.right-column[
+
+## Mini Task
+
+**Goal:** Get hands-on experience with Pandas on a real-life dataset.
+
+### Instructions
+
+1. Open (start) a Jupyter Notebook in the `UW_python_2018` folder  
+2. Solve tasks in: `Materials > Session_2 > pandas_mini_task.ipynb`
+
+*Feel free to also work on:* `Session_1 > basic_python_tasks.ipynb`
+
+### For help: 
+- <a href="https://github.com/TiesdeKok/LearnPythonforResearch">Python tutorial</a>
+- <a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/0_python_basics.ipynb">Python Basics Notebook</a>
+- <a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/1_opening_files.ipynbb">Opening files with Python / Pandas</a>
+- <a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/2_handling_data.ipynb">Data handling with Pandas</a>
+
+]
+    </textarea>
+
+
+    <script src="remark.js" type="text/javascript">
+    </script>
+
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'python',
+          highlightLines: true,
+          ratio: "16:9",
+          slideNumberFormat: ''
+        }) ;
+    </script>
+  </body>
+</html>

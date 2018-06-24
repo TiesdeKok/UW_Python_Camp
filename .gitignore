@@ -1,0 +1,17 @@
+## Remove ipynb checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+## Do not sync answers
+Answers/
+
+## Avoid syncing "dontsync" folders
+dontsync
+*/dontsync/*
+
+## Do not sync PowerPoint files
+*.ppt
+*.pptx
+
+## Other
+debug.log

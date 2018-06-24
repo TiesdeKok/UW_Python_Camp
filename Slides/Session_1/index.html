@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>introduction_slides</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       <base target="_blank">
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { 
+      	font-family: 'Droid Serif'; 
+      }
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .remark-code, .remark-inline-code { 
+      	font-family: 'Ubuntu Mono'; 
+      }
+
+            }
+
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+
+      .footnote {
+        position: absolute;
+        right: 3em;
+        bottom: 3em;
+      }
+
+      a, a > code {
+        color: #193a70;
+        text-decoration: none;
+      }
+
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+
+      .remark-code-line-highlighted     { background-color: #373832; }
+
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+
+      .pull-right ~ p {
+        clear: both;
+      }
+
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .mainlayout {
+      	font-size: 20px;
+      }
+
+      .emphasized {
+      	font-weight: bold;
+      }
+
+      /* Slide-specific styling */
+
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+
+       .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+       }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .right-column-next {
+        width: 75%;
+        float: right;
+        display: block;
+        margin-top: -30px;
+      }
+
+      .titleslide {
+      	background-image: url("images/campus_background.jpg");
+      	background-size:cover
+      }
+
+      .titleslide h1, .titleslide h2 {
+        color: black;
+        line-height: 0.8em;
+      }
+
+      .tocslide {
+      	font-size: 22px;
+        line-height: 150%;
+      }
+
+    div.custom_footer {
+		background-color: #d6d7d8;
+	    position: absolute;
+	    bottom: 0px;
+	    left: 0px;
+	    height: 30px;
+	    width: 100%;
+	    text-align: center;
+	}
+	div.custom_footer span {
+	    font-size: 10pt;
+	    color: black;
+	    bottom: -2px;
+	    position: absolute;
+		left: 400px;
+    }
+        
+    span:after { content:""; display: block;}
+        
+    .arrow-right:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #193a70;
+        padding-right: 10px;
+        vertical-align: middle;
+      
+    }
+        
+    .orange-button {
+    background-color: #E46E2E;
+    border-radius: 2px;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    padding: 13px 26px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 4px 0px 4px;
+    }
+
+    .orange-button:hover {
+        background-color: #F27624;
+        color: white;
+        text-decoration: none;
+    }
+
+    .orange-button:active, .orange-button:focus {
+        background-color: #DC601C;
+        color: white;
+        text-decoration: none;
+    }
+        
+    .install-button {
+        margin-top: 20px;
+    }
+        
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 0.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    blockquote p {
+      display: inline;
+    }
+        
+    .frame
+    {
+        width: 1920px;
+        height: 1080px;
+        border: 0;
+
+        -ms-transform: scale(0.80);
+        -moz-transform: scale(0.80);
+        -o-transform: scale(0.80);
+        -webkit-transform: scale(0.80);
+        transform: scale(0.80);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+    .frame1
+    {
+        width: 1200px;
+        height: 750px;
+        border: 0;
+
+        -ms-transform: scale(0.60);
+        -moz-transform: scale(0.60);
+        -o-transform: scale(0.60);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+        
+    </style>
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: center, titleslide
+
+<br><br>
+
+# Python Workshop:
+# Introduction
+<br>
+## <a href="http://www.tiesdekok.com" target="_blank">Ties de Kok</a>
+## Tilburg University
+
+---
+
+layout: true
+class: mainlayout
+
+<div class='custom_footer'><span>Python Workshop | Introduction | Ties de Kok (&copy; 2018)</span></div> 
+
+---
+
+class: tocslide
+
+.left-column[
+    ## About me
+]
+.right-column[
+
+<img style="position: relative; top: 75px; left: -100px;" src="images/website_human.PNG", width=100%>
+    
+]
+
+---
+
+class: tocslide
+
+.left-column[
+    ## About me
+]
+.right-column[
+
+<img style="position: relative; top: -30px; left: 0px;" src="images/map_tilburg.PNG", width=100%>
+    
+]
+
+
+---
+
+class: tocslide
+
+.left-column[
+  ## About me  
+  ## Program
+]
+.right-column[
+
+### What will we be doing?
+
+<span style="display: block; padding-top: 5px"></span>
+
+**Six sessions:**
+
+<span style="display: block; padding-top: 5px"></span>
+
+1) Introduction to Python (+ Python worfklow)  
+<span style="display: block; padding-top: 5px"></span>
+
+2) Handling data with `Pandas`  
+<span style="display: block; padding-top: 5px"></span>
+
+3) Gathering data from the web  
+<span style="display: block; padding-top: 5px"></span>
+
+4) Natural Language Processing  
+<span style="display: block; padding-top: 5px"></span>
+
+5) EDGAR walkthrough
+<span style="display: block; padding-top: 5px"></span>
+
+6) Miscellaneous topics 
+<span style="display: block; padding-top: 5px"></span>
+    
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## About me
+  ## Program
+  ## Basic<br>Principles
+]
+.right-column[
+<span style="display: block; padding-top: 1px"></span>
+
+### Basic Principles of this course:
+
+<span style="display: block; padding-top: 1px"></span>
+
+1) I cannot inject you with Python skills
+
+2) **It is up to you to make yourself proficient with Python**
+
+]
+
+--
+.right-column-next[
+
+<span style="display: block; padding-top: 5px"></span>
+
+### My goal:
+
+<span style="padding-left: 20px" class="arrow-right"></span><span>Make it more efficient for you to **teach Python to yourself**</span>
+
+]
+
+--
+.right-column-next[
+
+<span style="display: block; padding-top: 5px"></span>
+
+### How? 
+
+1. By providing starting points
+2. By pointing out common pitfalls 
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## About me
+  ## Program
+  ## Basic<br>Principles
+  ## Structure
+]
+.right-column[
+<span style="display: block; padding-top: 1px"></span>
+
+### Structure:
+
+
+**Each session consists of three elements:**
+
+<span style="display: block; padding-top: 2px"></span>
+
+
+1) Conceptual introduction  
+
+<span style="padding-left: 20px" class="arrow-right"></span> Introduce basic constructs and terminology
+
+2) Demonstration
+
+<span style="padding-left: 20px" class="arrow-right"></span> Demonstrate how I interact with the tools and write code
+
+3) Mini-task  
+
+<span style="padding-left: 20px" class="arrow-right"></span> Get hands-on experience
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## About me
+  ## Program
+  ## Basic<br>Principles
+  ## Structure
+  ## Materials
+]
+.right-column[
+<span style="display: block; padding-top: 15px"></span>
+
+### Slides:
+
+All of the slides are made available here: <a href='https://github.com/TiesdeKok/UW_Python_Camp'> GitHub page</a>
+
+<span style="display: block; padding-top: 5px"></span>
+
+### Python materials:
+
+<span style="display: block; padding-top: 5px"></span>
+
+
+All materials are available here:
+
+1) <a href='https://github.com/TiesdeKok/LearnPythonforResearch'> Learn Python for Research (GitHub)</a>
+
+2) <a href='https://github.com/TiesdeKok/Python_NLP_Tutorial'> Natural Language Processing (NLP) Tutorial (GitHub)</a>
+
+]
+
+
+---
+class: tocslide
+
+.left-column[
+  ## About me
+  ## Program
+  ## Basic<br>Principles
+  ## Structure
+  ## Materials
+  ## Agenda
+]
+.right-column[
+
+### Agenda
+
+<span style="display: block; padding-top: 2px"></span>
+
+  1. Why Python?
+  
+  2. Python eco-system
+
+  3. Using Python
+          
+  4. Jupyter Notebook
+          
+  5. Python syntax
+
+]
+
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+
+]
+.right-column[
+
+<img style="position: relative; top: 0px; left: 0px;" src="images/python_popularity.PNG", width=80%>
+
+<span style='font-size: 14pt; position: relative; bottom: 10px;'><i>(Source: https://stackoverflow.blog/2017/09/06/incredible-growth-python/)</i></span>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+
+]
+.right-column[
+<span style="display: block; padding-top: 2px"></span>
+
+### Python 2 vs. Python 3:
+
+<span style="display: block; padding-top: 2px"></span>
+
+<span style="padding-left: 20px" class="arrow-right"></span> Simple: always use Python 3 unless you have to use Python 2.
+
+Python 3 receives new updates, Python 2.7 is slowly phased out. 
+
+<span style="display: block; padding-top: 2px"></span>
+
+**Note!** Python 3 syntax is not always backwards compatible!
+
+<span style="display: block; padding-top: 2px"></span>
+
+
+`print 'Hello, world!'` <span style="padding-left: 20px" class="arrow-right"></span>Only works in Python 2.7
+
+`print('Hello, world!')` <span style="padding-left: 20px" class="arrow-right"></span>Works in Python 2.7 and Python 3.X
+
+<span style="display: block; padding-top: 2px"></span>
+
+
+### We will use Python 3.6
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+
+]
+.right-column[
+<span style="display: block; padding-top: 2px"></span>
+
+### Modules and packages
+
+A module/package is Python code that you "import" to add functionality. 
+
+**Two types of modules/packages:**
+
+1. Build-in modules that are included with Python
+2. Third-party modules/packages   
+<span style="padding-left: 20px" class="arrow-right"></span> The Python Package Index hosts more than 130,000 packages! 
+
+**Example:**
+  
+`import os`    
+<span style="padding-left: 20px" class="arrow-right"></span> Standard module  
+
+`import pandas as pd`   
+<span style="padding-left: 20px" class="arrow-right"></span> Third-party module  
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+
+]
+.right-column[
+<span style="display: block; padding-top: 2px"></span>
+
+### Modules and packages
+
+**How to install third-party modules/packages?**
+
+Use `pip` to install packages hosted on the Python Package Index
+
+Use `conda` to install packages hosted by `Anaconda` or `Conda-Forge`
+
+<span style="display: block; padding-top: 5px"></span>
+
+]
+
+--
+
+.right-column-next[
+
+### Recommendation: 
+<span style="padding-left: 20px" class="arrow-right"></span> always start with the default Anaconda 3 distribution!
+
+**Anaconda:** Python bundled with most used data science packages. 
+
+<span style="display: block; padding-top: 2px"></span>
+
+**For more info:** <a href="https://www.anaconda.com/what-is-anaconda/">Anconda Distribution website</a>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+]
+.right-column[
+
+### How to run Python code?
+
+<span style="display: block; padding-top: 2px"></span>
+
+1) Save code to `.py` file and run from command line: `python file.py`
+
+<img style="position: relative; top: 0px; left: 40px;" src="images/python_file.PNG", width=60%>
+
+2) Use an interactive console in the command line: `python` or `ipython`
+
+<img style="position: relative; top: 0px; left: 40px;" src="images/interactive_console.PNG", width=60%>
+
+
+<span style="padding-left: 20px" class="arrow-right"></span> **3) Use Jupyter Notebooks!**
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+]
+.right-column[
+
+### Jupyter Notebook
+
+<div style="text-align: center;">
+    <img style="position: relative; top: 0px; left: 0px; bottom:-50px;" src="images/Jupyter_Screenshot.PNG", width=90%>
+    <a class="orange-button" href="https://try.jupyter.org/" target="_blank">Try it in your browser</a>
+</div>
+        
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+]
+.right-column[
+
+### Jupyter Notebook
+
+<img style="position: relative; top: 0px; left: 0px;" src="images/basic_instructions.gif", width=105%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+]
+.right-column[
+
+### Jupyter Notebook
+
+#### How does it work:
+
+<img style="position: relative; top: 0px; left: 0px; margin-bottom: 5px;" src="images/jupyter_backend.png", width=60%>  
+**How to start:** 
+
+1. Open up a command line / terminal  
+2. Change to project directory using `cd`
+3. Type: `jupyter notebook`
+
+**How to stop:**  
+
+<span style="padding-left: 20px" class="arrow-right"></span> Press `ctrl+c` in command line / terminal
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+]
+.right-column[
+
+### Jupyter Notebook
+
+Using a Jupyter Notebook is largely self-explanatory. 
+
+<span style="display: block; padding-top: 1px"></span>
+
+**Most relevant shortcuts for reference purposes:**
+
+<span style="display: block; padding-top: 2px"></span>
+
+
+<img style="position: relative; top: 0px; left: 0px;" src="images/jupyter_controls.PNG", width=100%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+  ## Python<br>syntax
+]
+.right-column[
+
+### Python syntax is (relatively) easy!
+
+<span style="display: block; padding-top: 2px"></span>
+
+
+<img style="position: relative; top: 0px; left: 0px;" src="images/python_syntax_simple.PNG", width=90%>
+
+]
+
+--
+
+.right-column-next[
+### Where to start?
+
+<span style="padding-left: 20px" class="arrow-right"></span> I recommend to use my <a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/0_python_basics.ipynb">Python Basics Notebook</a>
+
+<span style="display: block; padding-top: 2px"></span>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Why<br>Python?
+  ## Python<br>Eco-system
+  ## Using<br>Python
+  ## Jupyter<br>Notebook
+  ## Python<br>syntax
+]
+.right-column[
+
+### A couple of caveats
+
+1) It is best practice to include all imports at the start
+
+2) The spacing (i.e. tabs) are not just for looks!  
+
+<img style="position: relative; top: 0px; left: 50px;" src="images/indent_example.PNG", width=50%>
+
+3) Avoid "blind" `try` and `except` blocks. 
+
+<img style="position: relative; top: 0px; left: 50px;" src="images/errors.PNG", width=70%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:200px;'><b>Questions?</b></span>
+
+<img style="position: relative; top: 10px; left:80px;" src="images/Business4-150ppp.jpg", width=60%> 
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:250px;'><b>Demonstration</b></span>
+
+<img style="position: relative; top: 10px; left:40px;" src="images/start_coding.jpg", width=90%> 
+
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+  ## Mini-task
+]
+
+.right-column[
+
+## Setup:
+
+1. Make sure you have Anaconda installed
+2. Make sure you downloaded the materials from GitHub
+2. Make sure you can start / open a Jupyter Notebook
+
+## Mini-task:
+
+**Goal:** Solve tasks in the "basic_python_tasks.ipynb" notebook.
+
+1. Open a Jupyter Notebook in the `UW_python_2018` folder
+2. Solve the basic Python tasks  
+<span style="padding-left: 20px" class="arrow-right"></span> Find them in `Materials > Session_1 > basic_python_tasks.ipynb`
+
+For help: 
+- <a href="https://github.com/TiesdeKok/LearnPythonforResearch">Python tutorial</a>
+- <a href="https://nbviewer.jupyter.org/github/TiesdeKok/LearnPythonforResearch/blob/master/0_python_basics.ipynb">Python Basics Notebook</a>
+      
+]
+
+    </textarea>
+
+
+    <script src="remark.js" type="text/javascript">
+    </script>
+
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'python',
+          highlightLines: true,
+          ratio: "16:9",
+          slideNumberFormat: ''
+        }) ;
+    </script>
+  </body>
+</html>
