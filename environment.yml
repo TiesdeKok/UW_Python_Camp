@@ -1,0 +1,22 @@
+name: uw-python-camp
+channels:
+- conda-forge
+- defaults
+dependencies:
+  - python=3.6
+  - spacy
+  - textacy
+  - textblob
+  - nltk
+  - tqdm
+  - deepdish
+  - xlrd
+  - openpyxl
+  - pytables
+  - qgrid
+  - pip:
+    - pyldavis
+    - requests-html
+    - fuzzywuzzy
+    - textstat
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz#en_core_web_sm
