@@ -41,12 +41,14 @@ Please find all the mini-tasks notebooks in the `Materials > Session_X >` folder
 
 You can download the entire repository by following these steps:
 
-### Clone repository
+### Download Materials:
 
-You can essentially "download" the contents of this repository by cloning the repository. 
+You can download the session materials using the following links:
 
-You can do this by clicking "Clone or download" button and then "Download ZIP":
+1) Introduction to Python (+ Python worfklow)  
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_1">Download Materials for Session 1</a>
 
-<img src="https://i.imgur.com/Ysak4s3.png" title="Jupyter Notebook" width = 300px/>
+2) Handling data with `Pandas`  
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_2">Download Materials for Session 2</a>
 
-If you unzip the ZIP file to a folder you are ready to start!
+If you unzip the ZIP file to a folder you are ready to start with the materials for that session!
