@@ -13,11 +13,11 @@
 
 1) Introduction to Python (+ Python worfklow)  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (6-25-2018)  
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_1/index.html">Session 1 Slides</a>
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_1/index.html" target="_blank">Session 1 Slides</a>
 
 2) Handling data with `Pandas`  
 <span style="padding-left: 20px" class="arrow-right"></span> Tuesday (6-26-2018)    
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_2/index.html">Session 2 Slides</a>
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_2/index.html" target="_blank">Session 2 Slides</a>
 
 3) Gathering data from the web  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (7-2-2018)    
