@@ -21,11 +21,11 @@
 
 3) Gathering data from the web  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (7-2-2018)    
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: TBD
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_3/index.html" target="_blank">Session 3 Slides</a>
 
 4) Natural Language Processing  
 <span style="padding-left: 20px" class="arrow-right"></span> Tuesday (7-3-2018)   
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: TBD
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_4/index.html" target="_blank">Session 4 Slides</a>
 
 5) EDGAR full walk-through  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (7-9-2018)   
@@ -50,5 +50,11 @@ You can download the session materials using the following links:
 
 2) Handling data with `Pandas`  
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_2">Download Materials for Session 2</a>
+
+3) Gathering data from the web  
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_3">Download Materials for Session 3</a>
+
+4) Natural Language Processing
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_4">Download Materials for Session 4</a>
 
 If you unzip the ZIP file to a folder you are ready to start with the materials for that session!
