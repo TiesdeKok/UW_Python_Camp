@@ -48,13 +48,13 @@ You can download the session materials using the following links:
 1) Introduction to Python (+ Python worfklow)  
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_1">Download Materials for Session 1</a>
 
-2) Handling data with `Pandas`  
+2) Handling data with `Pandas`   
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_2">Download Materials for Session 2</a>
 
-3) Gathering data from the web  
+3) Gathering data from the web   
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_3">Download Materials for Session 3</a>
 
-4) Natural Language Processing
+4) Natural Language Processing   
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_4">Download Materials for Session 4</a>
 
 If you unzip the ZIP file to a folder you are ready to start with the materials for that session!
