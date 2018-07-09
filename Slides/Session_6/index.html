@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>misc topics</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+       <base target="_blank">
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { 
+      	font-family: 'Droid Serif'; 
+      }
+
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+      .remark-code, .remark-inline-code { 
+      	font-family: 'Ubuntu Mono'; 
+      }
+
+            }
+
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+
+      .footnote {
+        position: absolute;
+        right: 3em;
+        bottom: 3em;
+      }
+
+      a, a > code {
+        color: #193a70;
+        text-decoration: none;
+      }
+
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+
+      .remark-code-line-highlighted     { background-color: #373832; }
+
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+
+      .pull-right ~ p {
+        clear: both;
+      }
+
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+
+      .mainlayout {
+      	font-size: 20px;
+      }
+
+      .emphasized {
+      	font-weight: bold;
+      }
+
+      /* Slide-specific styling */
+
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+
+      /* Two-column layout */
+      .left-column {
+        color: #777;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+
+       .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #000;
+       }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+      .right-column-next {
+        width: 75%;
+        float: right;
+        display: block;
+        margin-top: -30px;
+      }
+
+      .titleslide {
+      	background-image: url("images/campus_background.jpg");
+      	background-size:cover
+      }
+
+      .titleslide h1, .titleslide h2 {
+        color: black;
+        line-height: 0.8em;
+      }
+
+      .tocslide {
+      	font-size: 22px;
+        line-height: 150%;
+      }
+
+    div.custom_footer {
+		background-color: #d6d7d8;
+	    position: absolute;
+	    bottom: 0px;
+	    left: 0px;
+	    height: 30px;
+	    width: 100%;
+	    text-align: center;
+	}
+	div.custom_footer span {
+	    font-size: 10pt;
+	    color: black;
+	    bottom: -2px;
+	    position: absolute;
+		left: 400px;
+    }
+        
+    span:after { content:""; display: block;}
+        
+    .arrow-right:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid #193a70;
+        padding-right: 10px;
+        vertical-align: middle;
+      
+    }
+        
+    .orange-button {
+    background-color: #E46E2E;
+    border-radius: 2px;
+    color: white;
+    display: inline-block;
+    font-size: 16px;
+    padding: 13px 26px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 4px 0px 4px;
+    }
+
+    .orange-button:hover {
+        background-color: #F27624;
+        color: white;
+        text-decoration: none;
+    }
+
+    .orange-button:active, .orange-button:focus {
+        background-color: #DC601C;
+        color: white;
+        text-decoration: none;
+    }
+        
+    .install-button {
+        margin-top: 20px;
+    }
+        
+    blockquote {
+      background: #f9f9f9;
+      border-left: 10px solid #ccc;
+      margin: 0.5em 10px;
+      padding: 0.5em 10px;
+      quotes: "\201C""\201D""\2018""\2019";
+    }
+
+    blockquote p {
+      display: inline;
+    }
+        
+    .frame
+    {
+        width: 1920px;
+        height: 1080px;
+        border: 0;
+
+        -ms-transform: scale(0.80);
+        -moz-transform: scale(0.80);
+        -o-transform: scale(0.80);
+        -webkit-transform: scale(0.80);
+        transform: scale(0.80);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+
+    .frame1
+    {
+        width: 1200px;
+        height: 750px;
+        border: 0;
+
+        -ms-transform: scale(0.60);
+        -moz-transform: scale(0.60);
+        -o-transform: scale(0.60);
+        -webkit-transform: scale(0.60);
+        transform: scale(0.60);
+
+        -ms-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+    }
+        
+    </style>
+  </head>
+  <body>
+
+    <textarea id="source">
+
+class: center, titleslide
+
+<br><br>
+
+# Python Workshop:
+# Miscellaneous Topics
+<br>
+## <a href="http://www.tiesdekok.com" target="_blank">Ties de Kok</a>
+## Tilburg University
+
+---
+
+layout: true
+class: mainlayout
+
+<div class='custom_footer'><span>Python Workshop | Miscellaneous Topics | Ties de Kok (&copy; 2018)</span></div> 
+
+---
+
+class: tocslide
+
+.left-column[
+    ## Agenda
+]
+.right-column[
+
+### What are we going to discuss today?
+
+<span style="display: block; padding-top: 1px"></span>
+
+1. Best practices for coding projects 
+
+2. How to structure a coding project
+        
+3. Version control using GitHub
+        
+4. Jupyter Notebook with multiple languages
+                
+5. Running code remotely
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Agenda
+  ## Best<br>Practices
+]
+.right-column[
+### Best practices
+
+Best practices are important, in particular for projects with a lot of code! 
+
+### Starting point
+<span style="display: block; padding-top: 1px"></span>
+
+
+> ["Code and Data for the Social Sciences: A Practitioner’s Guide"](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)    
+> Gentzkow and Shapiro (2014) 
+
+My review:  
+
+> They highlight a lot of very important points!   
+> Unfortunately their implementations are not up-to-date and practical. 
+
+<span style="padding-left: 20px" class="arrow-right"></span> Let me give you my approach!
+
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Agenda
+  ## Best<br>Practices
+  ## My<br>Principles
+]
+.right-column[
+### My coding principles
+<span style="display: block; padding-top: 1px"></span>
+
+
+1. Force yourself to be organized from the beginning  
+<span style="display: block; padding-top: 3px"></span>
+
+2. Use basic version control for code and output  
+<span style="display: block; padding-top: 3px"></span>
+
+3. Use a flow-inspired folder structure   
+<span style="display: block; padding-top: 3px"></span>
+
+4. Be as descriptive as you can: code + filenames
+<span style="display: block; padding-top: 3px"></span>
+
+5. Use the power of Jupyter when descriptive code is not enough  
+<span style="display: block; padding-top: 3px"></span>
+
+6. Do not leave blind spots in your code
+
+<span style="display: block; padding-top: 3px"></span>
+
+]
+
+--
+
+.right-column-next[
+<span style="display: block; padding-top: 10px"></span>
+
+<span style="padding-left: 20px" class="arrow-right"></span> These are obviously highly opinionated!
+
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Agenda
+  ## Best<br>Practices
+  ## My<br>Principles
+  ## Python<br>Principles
+]
+.right-column[
+### The zen of Python ([Link](https://www.python.org/dev/peps/pep-0020/)):
+
+> Beautiful is better than ugly.  
+> Explicit is better than implicit.  
+> Simple is better than complex.  
+> Complex is better than complicated.  
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+
+> Errors should never pass silently.  
+> Unless explicitly silenced.  
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+
+> If the implementation is hard to explain, it's a bad idea.  
+> If the implementation is easy to explain, it may be a good idea.  
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+
+> There should be one-- and preferably only one --obvious way to do it.  
+> Although that way may not be obvious at first **unless you're Dutch.**  
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Agenda
+  ## Best<br>Practices
+  ## My<br>Principles
+  ## Python<br>Principles
+]
+.right-column[
+### The zen of Python ([Link](https://www.python.org/dev/peps/pep-0020/)):
+
+<span style="display: block; padding-top: 1px"></span>
+
+> There should be one-- and preferably only one --obvious way to do it.  
+> Although that way may not be obvious at first **unless you're Dutch.**  
+
+Explanation from author (Tim Peters):
+
+> Or, in other words, "obvious" is in part a learned, cultural judgment.
+There's really nothing universally obvious about any computer language,
+deluded proponents notwithstanding. **Nevertheless, most of Python is obvious
+to the Dutch.** Others sometimes have to work a bit at *learning* the one
+obvious way in Python, just as they have to work a bit at learning to
+appreciate tulips..
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+
+<span style="padding-left: 20px" class="arrow-right"></span> Sorry about that! 🌷🌷🌷
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Agenda
+  ## Best<br>Practices
+  ## My<br>Principles
+  ## Python<br>Principles
+  ## Folder<br>Structure
+]
+.right-column[
+### Folder structure
+
+<img style="position: relative; top: 0px; left: -0px;" src="images/folder_structure.PNG", width=100%>
+
+<span style="padding-left: 20px" class="arrow-right"></span> Always set working directory to the `Project Folder`
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+]
+.right-column[
+<span style="display: block; padding-top: 1px"></span>
+
+### What is version control?
+<span style="display: block; padding-top: 1px"></span>
+
+> Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+### Why do you need it?
+
+Does your project folder look something like this? 
+
+> code_v1.2 [06-06-2018]  
+> code_v1.2.1   
+> code_v1.2 (OLD!)  
+> code_v1.1 [Ties backup] 
+
+<span style="padding-left: 20px" class="arrow-right"></span> Version control solves this!
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+]
+.right-column[
+
+<img style="position: relative; top: 20px; left: 85px;" src="images/git.png", width=45%>
+
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+]
+.right-column[
+<span style="display: block; padding-top: 1px"></span>
+
+### How to use version control?
+
+The most widely used version control software is called `git` ([Link](https://git-scm.com/))
+
+You can run `git` locally, but it is better to use an online provider.  
+Storing your version control online makes it much less likely to lose it!
+
+]
+--
+.right-column-next[
+
+<span style="display: block; padding-top: 10px"></span>
+
+### Three major providers for `git`: 
+
+1. GitHub  
+2. BitBucket  
+3. GitLab
+
+<span style="display: block; padding-top: 1px"></span>
+
+<span style="padding-left: 20px" class="arrow-right"></span> In my experience `GitHub` is by far the best choice! 
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+]
+.right-column[
+
+<span style="display: block; padding-top: 1px"></span>
+
+### What is GitHub?
+<span style="display: block; padding-top: 1px"></span>
+
+> GitHub Inc. is a web-based hosting service for version control using Git. It is mostly used for computer code. It offers all of the distributed version control and source code management functionality of Git as well as adding its own features.
+
+]
+
+--
+.right-column-next[
+<span style="display: block; padding-top: 1px"></span>
+
+#### Why do I use GitHub? 
+
+1. Clean and easy to use interface  
+2. Native support for rendering Jupyter Notebooks   
+3. GitHub Desktop application is very convenient  
+4. Free unlimited private repositories for academics
+
+**Bonus feature:** you can use `GitHub pages` to host your webpages for free!  
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+]
+.right-column[
+
+
+### Apply for GitHub Education
+
+You can apply for `GitHub Education` as a researcher here: [**Submit Request**](https://education.github.com/discount_requests/new)
+
+<img style="position: relative; top: 20px; left: 120px;" src="images/github_education.PNG", width=60%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+  ## GitHub<br>Desktop
+]
+.right-column[
+
+
+### GitHub Desktop
+
+Download the `GitHub Desktop` for Windows or MacOS here: [**Download**](https://desktop.github.com/)
+
+<img style="position: relative; top: 00px; left: 40px;" src="images/github_desktop.PNG", width=85%>
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+  ## GitHub<br>Desktop
+  ## Basic<br>Workflow
+]
+.right-column[
+
+
+### Basic Workflow
+
+#### First time:
+
+1. Create a new repository on GitHub  
+2. Clone repository to computer  
+3. Copy+Paste project content into that folder
+4. Set up `.gitignore` file
+
+]
+
+--
+.right-column-next[
+
+#### When you start working   
+
+1. Sync with GitHub (i.e. "pull" changes)  
+
+]
+
+--
+.right-column-next[
+
+#### When you make changes   
+
+1. Sync with GitHub (i.e. "pull" changes)  
+2. Create commit   
+3. Push commit  
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+  ## GitHub<br>Desktop
+  ## Basic<br>Workflow
+  ## Gitignore<br>File
+]
+.right-column[
+
+
+### Gitignore file   
+
+There are a lot of things you don't want to sync with GitHub: 
+
+1. Data  
+2. Credentials  
+3. "Byproduct" files  
+
+]
+
+--
+.right-column-next[
+#### How?
+
+> A `.gitignore` file allows you to select files that should be automatically ignored by git. 
+
+You can look up the basic syntax here: [Gitignore documention](https://git-scm.com/docs/gitignore)
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Version<br>Control
+  ## Git
+  ## GitHub
+  ## GitHub<br>Desktop
+  ## Basic<br>Workflow
+  ## Gitignore<br>File
+]
+.right-column[
+
+### Example of my usual `.gitignore`   
+
+```text
+  /*
+  !.gitignore
+
+  **/.ipynb_checkpoints
+  **/desktop.ini
+
+  !empirical/
+  empirical/*
+  !empirical/archival/
+  empirical/archival/*
+  !empirical/archival/1_code/*.ipynb
+
+  !paper
+  paper/*
+  !paper/latex
+``` 
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Jupyter<br>Notebook
+]
+.right-column[
+
+### You can use Jupyter Notebooks for many languages! 
+
+Supported languages:  
+
+1. Python  
+2. R  
+3. Stata (using my [iPyStata package](https://github.com/TiesdeKok/ipystata))
+4. SAS (?)  
+5. And many more!
+
+For a full list, see this page: [Jupyter Kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels)
+
+<span style="display: block; padding-top: 1px"></span>
+
+]
+
+--
+.right-column-next[
+
+### Using multiple languages in one notebook is possible!
+<span style="display: block; padding-top: 1px"></span>
+
+Look up ipython magic commands, for example: [intro](https://jakevdp.github.io/PythonDataScienceHandbook/01.03-magic-commands.html)
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Jupyter<br>Notebook
+  ## Remote<br>Computing
+]
+.right-column[
+
+### Does your code:   
+
+1. Takes a long time to run?
+2. Require a lot of memory?
+
+<span style="padding-left: 20px" class="arrow-right"></span> Consider looking into running your code remotely!
+
+]
+
+--
+.right-column-next[
+
+### Running code remotely 
+<span style="display: block; padding-top: 1px"></span>
+
+> Using a "super computer" / "grid" / "compute server" allows you to run your code remotely using way more powerful hardware than an average computer
+
+Combine remote computing with parallel / multi-processing and you can drastically speed up your code!  
+
+<span style="padding-left: 20px" class="arrow-right"></span> I recommend the Python `joblib` library for parallel computing
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Jupyter<br>Notebook
+  ## Remote<br>Computing
+  ## Hyak
+]
+.right-column[
+
+### Hyak cluster
+
+The "supercomputer" used by the University of Washinghton is called "HYAK"
+
+Find information about it here: [HYAK Compute Cluster](https://itconnect.uw.edu/service/shared-scalable-compute-cluster-for-research-hyak/)
+
+<span style="display: block; padding-top: 1px"></span>
+### How to get access? 
+
+UW students can apply for free access through the HPCC:  
+
+[HPCC: getting started on Hyak](http://students.washington.edu/hpcc/getting-started-on-hyak/)
+
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:200px;'><b>Questions?</b></span>
+
+<img style="position: relative; top: 10px; left:80px;" src="images/Business4-150ppp.jpg", width=60%> 
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+]
+
+.right-column[
+
+<span style='position: relative; text-align:center; font-size: 28pt; left:250px;'><b>Demonstration</b></span>
+
+<img style="position: relative; top: 10px; left:40px;" src="images/start_coding.jpg", width=90%> 
+
+      
+]
+
+---
+class: tocslide
+
+.left-column[
+  ## Closing<br>remarks
+  ## Demonstration
+  ## Mini-task
+]
+
+.right-column[
+
+## Setup:
+
+1. Make sure you have a GitHub account
+2. Make sure you downloaded GitHub Desktop
+3. Remember to apply for GitHub Education
+
+## Mini-task:
+
+1. Create a repository on GitHub  
+2. Clone it to your computer  
+3. Add a text file to your folder  
+4. Create a commit  
+5. Push commit to GitHub  
+6. Add neighbor to your GitHub repository  
+7. Have them clone your repository  
+8. Make them commit + push a change to your text file
+8. Sync (Pull) their change   
+      
+]
+
+    </textarea>
+
+
+    <script src="remark.js" type="text/javascript">
+    </script>
+
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+
+    <script type="text/javascript">
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'python',
+          highlightLines: true,
+          ratio: "16:9",
+          slideNumberFormat: ''
+        }) ;
+    </script>
+  </body>
+</html>
