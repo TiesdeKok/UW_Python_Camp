@@ -29,11 +29,11 @@
 
 5) EDGAR full walk-through  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (7-9-2018)   
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: TBD
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: No slides
 
 6) Misc. topics  
 <span style="padding-left: 20px" class="arrow-right"></span> Monday (7-10-2018)    
-<span style="padding-left: 20px" class="arrow-right"></span>Slides: TBD
+<span style="padding-left: 20px" class="arrow-right"></span>Slides: <a href="http://www.tiesdekok.com/UW_Python_Camp/Slides/Session_6/index.html" target="_blank">Session 6 Slides</a>
 
 ### Mini-tasks
 
@@ -56,5 +56,8 @@ You can download the session materials using the following links:
 
 4) Natural Language Processing   
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_4">Download Materials for Session 4</a>
+
+5) EDGAR Walkthrough   
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_5">Download Materials for Session 5</a>
 
 If you unzip the ZIP file to a folder you are ready to start with the materials for that session!
