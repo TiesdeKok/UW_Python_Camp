@@ -60,4 +60,7 @@ You can download the session materials using the following links:
 5) EDGAR Walkthrough   
 <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_5">Download Materials for Session 5</a>
 
+6) Folder structure
+<a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/TiesdeKok/UW_Python_Camp/tree/master/Materials/Session_6">Download Materials for Session 6</a>
+
 If you unzip the ZIP file to a folder you are ready to start with the materials for that session!
